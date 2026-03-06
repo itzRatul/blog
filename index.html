@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>only ratul's imagination</title>
+  <meta name="description"
+    content="Personal blog by MD Ratul Hossen — AI Researcher & LLM Enthusiast. Exploring the depths of AI, Large Language Models, and the art of living intentionally." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=JetBrains+Mono:wght@300;400;500;600&family=Lora:ital,wght@0,400;0,500;1,400&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- Custom Cursor -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-dot" id="cursorDot"></div>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#home" onclick="closeMobile()">Home</a>
+    <a href="#blog" onclick="closeMobile()">Blog</a>
+    <a href="#categories" onclick="closeMobile()">Categories</a>
+    <a href="#about" onclick="closeMobile()">About</a>
+    <a href="#newsletter" onclick="closeMobile()">Subscribe</a>
+  </div>
+
+  <!-- NAV -->
+  <nav>
+    <a class="nav-logo" href="#home">&lt;ratul/&gt;</a>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#blog">Blog</a></li>
+      <li><a href="#categories">Categories</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#newsletter" class="nav-cta">Subscribe</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger" onclick="toggleMobile()">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="home">
+    <div class="hero-bg"></div>
+    <div class="hero-grid"></div>
+    <div class="hero-inner">
+      <div class="hero-left">
+        <div class="hero-tag">Est. 2025 · Dhaka, Bangladesh</div>
+        <h1 class="hero-title">
+          Where<br><em>Code Meets</em><br>Curiosity
+        </h1>
+        <p class="hero-sub">
+          Personal blog by <strong>MD Ratul Hossen</strong> — a CS student at DIU exploring the depths of AI, Large
+          Language Models, and the art of living intentionally.
+        </p>
+        <div class="hero-actions">
+          <a href="#blog" class="btn-primary">Read Latest Posts</a>
+          <a href="#about" class="btn-ghost">About Me</a>
+        </div>
+      </div>
+      <div class="hero-right">
+        <div class="hero-stat-card">
+          <div class="stat-label">Current Focus</div>
+          <div class="stat-value">LLM Research</div>
+          <div class="stat-desc">Transformer architectures & fine-tuning techniques</div>
+        </div>
+        <div class="hero-stat-card">
+          <div class="stat-label">Institution</div>
+          <div class="stat-value">DIU</div>
+          <div class="stat-desc">B.Sc. CSE — Daffodil International University</div>
+        </div>
+        <div class="hero-stat-card">
+          <div class="stat-label">Latest Project</div>
+          <div class="stat-value">M.E.R.C.Y</div>
+          <div class="stat-desc">Context-aware AI agent via Ollama + Telegram</div>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-hint">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- TICKER -->
+  <div class="ticker-wrap">
+    <div class="ticker-inner">
+      <span class="ticker-item">AI Research</span>
+      <span class="ticker-item">LLM Experiments</span>
+      <span class="ticker-item">Programming</span>
+      <span class="ticker-item">Lifestyle</span>
+      <span class="ticker-item">Transformer Architecture</span>
+      <span class="ticker-item">Ollama</span>
+      <span class="ticker-item">Python & ML</span>
+      <span class="ticker-item">DIU · CSE</span>
+      <span class="ticker-item">AI Research</span>
+      <span class="ticker-item">LLM Experiments</span>
+      <span class="ticker-item">Programming</span>
+      <span class="ticker-item">Lifestyle</span>
+      <span class="ticker-item">Transformer Architecture</span>
+      <span class="ticker-item">Ollama</span>
+      <span class="ticker-item">Python & ML</span>
+      <span class="ticker-item">DIU · CSE</span>
+    </div>
+  </div>
+
+  <!-- CATEGORIES -->
+  <section id="categories">
+    <div class="section-inner">
+      <div class="section-header fade-up">
+        <div class="section-eyebrow">Browse Topics</div>
+        <h2 class="section-title">What I Write About</h2>
+      </div>
+      <div class="categories-grid fade-up">
+        <a class="cat-card" href="#blog" onclick="filterPosts('lifestyle')">
+          <span class="cat-icon">🌿</span>
+          <div class="cat-name">Lifestyle</div>
+          <div class="cat-count">Daily life · Reflections · Growth</div>
+        </a>
+        <a class="cat-card" href="#blog" onclick="filterPosts('ai')">
+          <span class="cat-icon">🧠</span>
+          <div class="cat-name">AI Research</div>
+          <div class="cat-count">Papers · Concepts · Analysis</div>
+        </a>
+        <a class="cat-card" href="#blog" onclick="filterPosts('llm')">
+          <span class="cat-icon">⚡</span>
+          <div class="cat-name">LLM Experiments</div>
+          <div class="cat-count">Ollama · Fine-tuning · Logs</div>
+        </a>
+        <a class="cat-card" href="#blog" onclick="filterPosts('prog')">
+          <span class="cat-icon">💻</span>
+          <div class="cat-name">Programming</div>
+          <div class="cat-count">DSA · Concepts · Projects</div>
+        </a>
+        <a class="cat-card" href="#blog" onclick="filterPosts('other')">
+          <span class="cat-icon">✨</span>
+          <div class="cat-name">Others</div>
+          <div class="cat-count">Chess · Poetry · Thoughts</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOG -->
+  <section id="blog">
+    <div class="section-inner">
+      <div class="featured-label">Featured Post</div>
+
+      <!-- Featured Post (dynamically loaded) -->
+      <div class="featured-post" id="featuredPost">
+        <!-- Will be populated by script.js -->
+      </div>
+
+      <!-- Blog Cards (dynamically loaded) -->
+      <div class="blog-grid" id="blogGrid">
+        <!-- Will be populated by script.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="section-inner">
+      <div class="about-grid">
+        <div class="about-left fade-up">
+          <div class="about-avatar">
+            <img src="assets/avater.jpg" alt="MD Ratul Hossen" />
+            <div class="avatar-overlay"></div>
+            <div class="avatar-name">
+              <h3>MD Ratul Hossen</h3>
+              <p>AI Researcher · CS Student</p>
+            </div>
+          </div>
+          <div class="about-links">
+            <a class="about-link" href="https://itzratul.github.io/portfolio" target="_blank">Portfolio</a>
+            <a class="about-link" href="https://linkedin.com/in/mdratulhossen" target="_blank">LinkedIn</a>
+            <a class="about-link" href="https://github.com/itzRatul" target="_blank">GitHub</a>
+            <a class="about-link" href="https://kaggle.com/mdratulhossen" target="_blank">Kaggle</a>
+            <a class="about-link" href="mailto:251-15-596@diu.edu.bd">Email</a>
+          </div>
+        </div>
+
+        <div class="about-right fade-up">
+          <div class="section-eyebrow">About Me</div>
+          <h2 class="section-title" style="margin-bottom:1.5rem;">The Person Behind<br><em
+              style="font-style:italic;color:var(--accent)">The Blog</em></h2>
+
+          <p class="about-bio">
+            I'm <strong>MD Ratul Hossen</strong>, a Computer Science student at <strong>Daffodil International
+              University</strong>, Dhaka. My obsession? <strong>Large Language Models</strong> — understanding how they
+            work from the ground up, deploying them locally, and one day building scalable LLMs from scratch.
+          </p>
+          <p class="about-bio">
+            Beyond the technical, I write about <strong>life as a student in Bangladesh</strong>, the discipline I've
+            learned from chess, and occasional poetry that refuses to stay in my head. This blog is my lab notebook, my
+            journal, and my contribution to the community — all in one.
+          </p>
+
+          <div class="skills-section">
+            <div class="skills-title">Technical Arsenal</div>
+            <div class="skills-list">
+              <span class="skill-tag">Python</span>
+              <span class="skill-tag">PyTorch</span>
+              <span class="skill-tag">Ollama</span>
+              <span class="skill-tag">Transformers</span>
+              <span class="skill-tag">Scikit-learn</span>
+              <span class="skill-tag">Pandas / NumPy</span>
+              <span class="skill-tag">C & C++</span>
+              <span class="skill-tag">Hugging Face</span>
+              <span class="skill-tag">n8n</span>
+              <span class="skill-tag">Telegram API</span>
+            </div>
+          </div>
+
+          <div class="skills-section">
+            <div class="skills-title">Education</div>
+            <div class="education-item">
+              <div class="edu-year">Jan 2025 — 2028</div>
+              <div class="edu-title">B.Sc. in Computer Science & Engineering</div>
+              <div class="edu-school">Daffodil International University, Dhaka · CGPA 3.69+</div>
+            </div>
+            <div class="education-item">
+              <div class="edu-year">2023</div>
+              <div class="edu-title">Higher Secondary Certificate (HSC)</div>
+              <div class="edu-school">Noapara Govt. College · GPA 4.58 · Science</div>
+            </div>
+          </div>
+
+          <div class="skills-section">
+            <div class="skills-title">Club Memberships</div>
+            <div class="about-links">
+              <span class="about-link">DIU Computer & Programming Club</span>
+              <span class="about-link">Daffodil AI Club</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section id="newsletter">
+    <div class="newsletter-inner fade-up">
+      <div class="section-eyebrow">Stay Updated</div>
+      <h2 class="newsletter-title">Get New Posts<br><em>Straight to You</em></h2>
+      <p class="newsletter-sub">No spam. Just thoughtful writing on AI, code, and life — whenever something worth
+        sharing happens.</p>
+      <div class="newsletter-form">
+        <input class="newsletter-input" type="email" placeholder="your@email.com" id="emailInput" />
+        <button class="newsletter-btn" onclick="subscribe()">Subscribe →</button>
+      </div>
+      <p id="subMsg"
+        style="font-family:'JetBrains Mono',monospace;font-size:0.65rem;color:var(--accent);margin-top:0.75rem;opacity:0;transition:opacity 0.3s;letter-spacing:0.1em;">
+        ✓ You're subscribed! Welcome aboard.
+      </p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo">
+        &lt;ratul/&gt;
+        <small>AI · Code · Life</small>
+      </div>
+      <ul class="footer-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#blog">Blog</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="https://github.com/itzRatul" target="_blank">GitHub</a></li>
+        <li><a href="https://linkedin.com/in/mdratulhossen" target="_blank">LinkedIn</a></li>
+      </ul>
+      <div class="footer-copy">© 2025 MD Ratul Hossen · Dhaka, Bangladesh</div>
+    </div>
+  </footer>
+
+  <!-- MODAL -->
+  <div class="modal-overlay" id="modalOverlay" onclick="closeModalOutside(event)">
+    <div class="modal" id="modal">
+      <button class="modal-close" onclick="closeModal()">✕ Close</button>
+      <div id="modalContent"></div>
+    </div>
+  </div>
+
+  <!-- Marked.js for Markdown parsing -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,83 @@
+[
+    {
+        "slug": "understanding-self-attention",
+        "title": "Understanding Self-Attention: The Heart of Transformer Architecture",
+        "category": "ai",
+        "categoryLabel": "AI Research",
+        "date": "March 2025",
+        "readTime": "8 min read",
+        "excerpt": "A deep dive into the mechanism that revolutionized natural language processing. From Query-Key-Value matrices to multi-head attention — explained from first principles with intuition and code.",
+        "image": "assets/self_attention.png",
+        "featured": true
+    },
+    {
+        "slug": "running-llama-locally",
+        "title": "Running Llama 3.2 Locally with Ollama: My First Experiment Log",
+        "category": "llm",
+        "categoryLabel": "LLM Experiment",
+        "date": "Feb 2025",
+        "readTime": "5 min read",
+        "excerpt": "Setup, benchmarks, prompt engineering tricks, and what surprised me most about running a 1B parameter model on my own machine.",
+        "image": "assets/running_llama.png"
+    },
+    {
+        "slug": "building-mercy",
+        "title": "Building M.E.R.C.Y: An AI Agent That Actually Remembers You",
+        "category": "prog",
+        "categoryLabel": "Programming",
+        "date": "Jan 2025",
+        "readTime": "7 min read",
+        "excerpt": "How I engineered a persistent memory system for a conversational AI using Python, Ollama, and the Telegram API — and lessons learned.",
+        "image": "assets/mercy_bot.png"
+    },
+    {
+        "slug": "what-is-rlhf",
+        "title": "What is RLHF? Reinforcement Learning from Human Feedback Explained",
+        "category": "ai",
+        "categoryLabel": "AI Research",
+        "date": "Mar 2025",
+        "readTime": "6 min read",
+        "excerpt": "Breaking down the training methodology behind ChatGPT and modern LLMs — reward models, PPO, and the alignment problem in plain terms.",
+        "image": "assets/rlhf_training.png"
+    },
+    {
+        "slug": "cs-student-in-bangladesh",
+        "title": "Being a CS Student in Bangladesh: The Grind, the Growth",
+        "category": "lifestyle",
+        "categoryLabel": "Lifestyle",
+        "date": "Feb 2025",
+        "readTime": "4 min read",
+        "excerpt": "Honest reflections on first-year university life, balancing academic pressure with personal curiosity, and why I chose to specialize in AI.",
+        "image": "assets/cs_student_life.png"
+    },
+    {
+        "slug": "rainfall-data-python",
+        "title": "24 Years of Rainfall Data: What Python Taught Me About Climate",
+        "category": "prog",
+        "categoryLabel": "Programming",
+        "date": "Jan 2025",
+        "readTime": "6 min read",
+        "excerpt": "A walkthrough of my Project Rainfall — processing CSV/Excel data, building linear regression models, and visualizing climate trends with Matplotlib.",
+        "image": "assets/rainfall_data.png"
+    },
+    {
+        "slug": "chess-and-ai",
+        "title": "Chess & AI: How the Game That Shaped Modern Intelligence Still Teaches Us",
+        "category": "other",
+        "categoryLabel": "Others",
+        "date": "Mar 2025",
+        "readTime": "5 min read",
+        "excerpt": "From Deep Blue to AlphaZero — chess has always been AI's proving ground. What makes it still relevant for understanding modern neural systems?",
+        "image": "assets/chess_ai.jpg"
+    },
+    {
+        "slug": "patient-management-system",
+        "title": "Building a Patient Management System in C: Security Meets Simplicity",
+        "category": "prog",
+        "categoryLabel": "Programming",
+        "date": "Jan 2025",
+        "readTime": "6 min read",
+        "excerpt": "How I built a secure command-line healthcare record management system in C — with multi-user authentication, intelligent search, and persistent file storage.",
+        "image": "assets/patient_system.jpg"
+    }
+]
