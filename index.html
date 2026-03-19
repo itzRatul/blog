@@ -1,296 +1,400 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="bn">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>only ratul's imagination</title>
-  <meta name="description"
-    content="Personal blog by MD Ratul Hossen — AI Researcher & LLM Enthusiast. Exploring the depths of AI, Large Language Models, and the art of living intentionally." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=JetBrains+Mono:wght@300;400;500;600&family=Lora:ital,wght@0,400;0,500;1,400&display=swap"
-    rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>রাতুলের ব্লগ | প্রোগ্রামিং এবং অ্যালগরিদম টিউটোরিয়াল</title>
+  <meta name="description" content="প্রোগ্রামিং এবং অ্যালগোরিদম টিউটোরিয়াল - রাতুলের ব্লগ">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
-
 <body>
 
-  <!-- Custom Cursor -->
-  <div class="cursor" id="cursor"></div>
-  <div class="cursor-dot" id="cursorDot"></div>
-
-  <!-- Mobile Menu -->
-  <div class="mobile-menu" id="mobileMenu">
-    <a href="#home" onclick="closeMobile()">Home</a>
-    <a href="#blog" onclick="closeMobile()">Blog</a>
-    <a href="#categories" onclick="closeMobile()">Categories</a>
-    <a href="#about" onclick="closeMobile()">About</a>
-    <a href="#newsletter" onclick="closeMobile()">Subscribe</a>
+  <!-- Top Social Bar -->
+  <div class="top-bar">
+    <div class="container">
+      <div class="social-icons">
+        <a href="#" title="Twitter" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="#" title="LinkedIn" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#" title="GitHub" aria-label="GitHub"><i class="fab fa-github"></i></a>
+      </div>
+    </div>
   </div>
 
-  <!-- NAV -->
-  <nav>
-    <a class="nav-logo" href="#home">&lt;ratul/&gt;</a>
-    <ul class="nav-links">
-      <li><a href="#home">Home</a></li>
-      <li><a href="#blog">Blog</a></li>
-      <li><a href="#categories">Categories</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#newsletter" class="nav-cta">Subscribe</a></li>
-    </ul>
-    <div class="hamburger" id="hamburger" onclick="toggleMobile()">
-      <span></span><span></span><span></span>
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="header-content">
+      <div class="site-brand">
+        <a href="index.html" class="site-title">রাতুলের ব্লগ</a>
+        <p class="site-subtitle">প্রোগ্রামিং, অ্যালগরিদম, AI Research</p>
+      </div>
+      <nav class="main-nav">
+        <button class="hamburger" aria-label="Menu" id="menuToggle">
+          <i class="fas fa-bars"></i>
+        </button>
+        <ul class="nav-list" id="navList">
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="algorithms.html">অ্যালগরিদম নিয়ে যত লেখা!</a></li>
+          <li><a href="ai-research.html">AI Research</a></li>
+          <li><a href="about.html">আমার সম্পর্কে…</a></li>
+        </ul>
+      </nav>
     </div>
-  </nav>
+    <div class="hero-banner">
+      <h1>রাতুলের ব্লগ</h1>
+      <p>প্রোগ্রামিং, অ্যালগরিদম, ব্যাকএন্ড ইঞ্জিনিয়ারিং</p>
+    </div>
+  </header>
 
-  <!-- HERO -->
-  <section id="home">
-    <div class="hero-bg"></div>
-    <div class="hero-grid"></div>
-    <div class="hero-inner">
-      <div class="hero-left">
-        <div class="hero-tag">Est. 2025 · Dhaka, Bangladesh</div>
-        <h1 class="hero-title">
-          Where<br><em>Code Meets</em><br>Curiosity
-        </h1>
-        <p class="hero-sub">
-          Personal blog by <strong>MD Ratul Hossen</strong> — a CS student at DIU exploring the depths of AI, Large
-          Language Models, and the art of living intentionally.
+  <!-- Main Layout -->
+  <div class="page-wrapper">
+    <!-- Blog Feed -->
+    <main class="main-content" id="blogFeed">
+
+      <!-- Post 1 -->
+      <article class="post-card">
+        <h2 class="post-title"><a href="#">ডেটা স্ট্রাকচার: XOR লিংকড লিস্ট</a></h2>
+        <div class="post-meta">
+          <span class="meta-icon"><i class="far fa-calendar-alt"></i></span>
+          <span class="meta-date">মে ২৯, ২০২৩</span>
+          <span class="meta-separator">|</span>
+          <span><i class="far fa-user"></i> Shafaet Ashraf</span>
+        </div>
+        <div class="post-tags">
+          <a href="#" class="tag">অ্যালগরিদম</a>
+          <a href="#" class="tag">ডেটা স্ট্রাকচার</a>
+          <a href="#" class="tag">প্রোগ্রামিং</a>
+        </div>
+        <p class="post-excerpt">XOR লিংকড লিস্ট হলো একটি মেমোরি-এফিসিয়েন্ট ডেটা স্ট্রাকচার যেখানে প্রতিটি নোডে আগের এবং পরের নোডের অ্যাড্রেসের XOR সংরক্ষণ করা হয়। এটি ডাবলি লিংকড লিস্টের তুলনায় অর্ধেক মেমোরি ব্যবহার করে।</p>
+        <a href="#" class="btn-details">বিস্তারিত</a>
+      </article>
+
+      <!-- Post 2 -->
+      <article class="post-card">
+        <h2 class="post-title"><a href="#">ব্যাকএন্ড ইঞ্জিনিয়ারিং: ডিস্ট্রিবিউটেড ফাইল সিস্টেম</a></h2>
+        <div class="post-meta">
+          <span class="meta-icon"><i class="far fa-calendar-alt"></i></span>
+          <span class="meta-date">জুলাই ৩, ২০২২</span>
+          <span class="meta-separator">|</span>
+          <span><i class="far fa-user"></i> Shafaet Ashraf</span>
+        </div>
+        <div class="post-tags">
+          <a href="#" class="tag">ডিস্ট্রিবিউটেড সিস্টেম</a>
+          <a href="#" class="tag">ব্যাকএন্ড ইঞ্জিনিয়ারিং</a>
+        </div>
+        <p class="post-excerpt">ডিস্ট্রিবিউটেড ফাইল সিস্টেম হলো এমন একটি সিস্টেম যেখানে একাধিক সার্ভারে ডেটা ছড়িয়ে রাখা হয়, কিন্তু ক্লায়েন্টের কাছে এটি একটি ইউনিফাইড ফাইল সিস্টেম হিসেবে দেখা যায়।</p>
+        <a href="#" class="btn-details">বিস্তারিত</a>
+      </article>
+
+      <!-- Post 3 -->
+      <article class="post-card">
+        <h2 class="post-title"><a href="#">অ্যালগরিদম কমপ্লেক্সিটি (বিগ "O" নোটেশন)</a></h2>
+        <div class="post-meta">
+          <span class="meta-icon"><i class="far fa-calendar-alt"></i></span>
+          <span class="meta-date">অক্টোবর ১২, ২০২১</span>
+          <span class="meta-separator">|</span>
+          <span><i class="far fa-user"></i> Shafaet Ashraf</span>
+        </div>
+        <div class="post-tags">
+          <a href="#" class="tag">অ্যালগোরিদম</a>
+          <a href="#" class="tag">কমপ্লেক্সিটি</a>
+          <a href="#" class="tag">বিগ O</a>
+        </div>
+        <p class="post-excerpt">অ্যালগরিদমের কমপ্লেক্সিটি পরিমাপ করার জন্য বিগ O নোটেশন ব্যবহার করা হয়। এটি দিয়ে আমরা বুঝতে পারি ইনপুট সাইজ বাড়ার সাথে সাথে একটি অ্যালগরিদমের রানটাইম বা মেমোরি কিভাবে পরিবর্তন হয়।</p>
+        <a href="#" class="btn-details">বিস্তারিত</a>
+      </article>
+
+      <!-- Post 4 -->
+      <article class="post-card">
+        <h2 class="post-title"><a href="#">ব্যাকএন্ড ইঞ্জিনিয়ারিং: কনসিস্টেন্ট হ্যাশিং</a></h2>
+        <div class="post-meta">
+          <span class="meta-icon"><i class="far fa-calendar-alt"></i></span>
+          <span class="meta-date">জুলাই ৩, ২০২১</span>
+          <span class="meta-separator">|</span>
+          <span><i class="far fa-user"></i> Shafaet Ashraf</span>
+        </div>
+        <div class="post-tags">
+          <a href="#" class="tag">ব্যাকএন্ড ইঞ্জিনিয়ারিং</a>
+          <a href="#" class="tag">হ্যাশিং</a>
+        </div>
+        <p class="post-excerpt">ডিস্ট্রিবিউটেড সিস্টেমে কনসিস্টেন্ট হ্যাশিং এমন একটি টেকনিক যা সার্ভার যোগ বা বাদ দেওয়ার সময় ডেটা রি-ডিস্ট্রিবিউশন মিনিমাইজ করে। এটি ক্যাশিং, লোড ব্যালেন্সিং, এবং ডেটা পার্টিশনিং-এ ব্যবহৃত হয়।</p>
+        <a href="#" class="btn-details">বিস্তারিত</a>
+      </article>
+
+      <!-- Post 5 -->
+      <article class="post-card">
+        <h2 class="post-title"><a href="#">ব্যাকএন্ড ইঞ্জিনিয়ারিং: লগ-স্ট্রাকচার্ড-ট্রি</a></h2>
+        <div class="post-meta">
+          <span class="meta-icon"><i class="far fa-calendar-alt"></i></span>
+          <span class="meta-date">মে ২১, ২০২১</span>
+          <span class="meta-separator">|</span>
+          <span><i class="far fa-user"></i> Shafaet Ashraf</span>
+        </div>
+        <div class="post-tags">
+          <a href="#" class="tag">ব্যাকএন্ড ইঞ্জিনিয়ারিং</a>
+        </div>
+        <p class="post-excerpt">LSM ট্রি বা লগ-স্ট্রাকচার্ড মার্জ ট্রি হলো এমন একটি ডেটা স্ট্রাকচার যা উচ্চ-ওয়ার্কলোড রাইট অপারেশনের জন্য অপটিমাইজড। এটি LevelDB, RocksDB, Cassandra ইত্যাদি ডাটাবেসে ব্যবহৃত হয়।</p>
+        <a href="#" class="btn-details">বিস্তারিত</a>
+      </article>
+
+      <!-- Post 6 -->
+      <article class="post-card">
+        <h2 class="post-title"><a href="#">ডাইনামিক প্রোগ্রামিং ৯ (ট্রি, মিনিমাম ভারটেক্স কভার)</a></h2>
+        <div class="post-meta">
+          <span class="meta-icon"><i class="far fa-calendar-alt"></i></span>
+          <span class="meta-date">মে ৩, ২০২০</span>
+          <span class="meta-separator">|</span>
+          <span><i class="far fa-user"></i> Shafaet Ashraf</span>
+        </div>
+        <div class="post-tags">
+          <a href="#" class="tag">ডাইনামিক প্রোগ্রামিং</a>
+          <a href="#" class="tag">ডিপি</a>
+        </div>
+        <p class="post-excerpt">ট্রি স্ট্রাকচারের উপর ডাইনামিক প্রোগ্রামিং অ্যাপ্লাই করে মিনিমাম ভারটেক্স কভার সমস্যার সমাধান। ট্রি ডিপি-র একটি ক্লাসিক উদাহরণ।</p>
+        <a href="#" class="btn-details">বিস্তারিত</a>
+      </article>
+
+      <!-- Post 7 -->
+      <article class="post-card">
+        <h2 class="post-title"><a href="#">ডাইনামিক প্রোগ্রামিং ৮ (বিটমাস্ক, ট্রাভেলিং সেলসম্যান)</a></h2>
+        <div class="post-meta">
+          <span class="meta-icon"><i class="far fa-calendar-alt"></i></span>
+          <span class="meta-date">এপ্রিল ২৩, ২০২০</span>
+          <span class="meta-separator">|</span>
+          <span><i class="far fa-user"></i> Shafaet Ashraf</span>
+        </div>
+        <div class="post-tags">
+          <a href="#" class="tag">ডাইনামিক প্রোগ্রামিং</a>
+          <a href="#" class="tag">ডিপি</a>
+        </div>
+        <p class="post-excerpt">বিটমাস্কিং এবং ডাইনামিক প্রোগ্রামিং দিয়ে ট্রাভেলিং সেলসম্যান প্রবলেম (TSP) সমাধানের উপায়। বিটমাস্ক দিয়ে সাবসেট রিপ্রেজেন্ট করার টেকনিক শেখা যাবে।</p>
+        <a href="#" class="btn-details">বিস্তারিত</a>
+      </article>
+
+      <!-- Post 8 -->
+      <article class="post-card">
+        <h2 class="post-title"><a href="#">ডাইনামিক প্রোগ্রামিং ৭ (ম্যাট্রিক্স চেইন মাল্টিপ্লিকেশন)</a></h2>
+        <div class="post-meta">
+          <span class="meta-icon"><i class="far fa-calendar-alt"></i></span>
+          <span class="meta-date">এপ্রিল ২৩, ২০২০</span>
+          <span class="meta-separator">|</span>
+          <span><i class="far fa-user"></i> Shafaet Ashraf</span>
+        </div>
+        <div class="post-tags">
+          <a href="#" class="tag">ডাইনামিক প্রোগ্রামিং</a>
+          <a href="#" class="tag">ডিপি</a>
+        </div>
+        <p class="post-excerpt">ম্যাট্রিক্স চেইন মাল্টিপ্লিকেশন প্রবলেমে একাধিক ম্যাট্রিক্স গুণ করার সময় অপটিমাল প্যারেন্থেসাইজেশন বের করা হয়। ইন্টারভাল ডিপি-র একটি চমৎকার উদাহরণ।</p>
+        <a href="#" class="btn-details">বিস্তারিত</a>
+      </article>
+
+      <!-- Post 9 -->
+      <article class="post-card">
+        <h2 class="post-title"><a href="#">ডাইনামিক প্রোগ্রামিং ৬ (সাবসেট সাম, কম্বিনেটরিক্স, ডিসিশন প্রবলেম)</a></h2>
+        <div class="post-meta">
+          <span class="meta-icon"><i class="far fa-calendar-alt"></i></span>
+          <span class="meta-date">এপ্রিল ২২, ২০২০</span>
+          <span class="meta-separator">|</span>
+          <span><i class="far fa-user"></i> Shafaet Ashraf</span>
+        </div>
+        <div class="post-tags">
+          <a href="#" class="tag">ডাইনামিক প্রোগ্রামিং</a>
+          <a href="#" class="tag">ডিপি</a>
+        </div>
+        <p class="post-excerpt">সাবসেট সাম প্রবলেম এবং কম্বিনেটরিক্স ডিপি দিয়ে সমাধান। ডিসিশন প্রবলেমের ধারণা এবং এটি কিভাবে ডাইনামিক প্রোগ্রামিং দিয়ে সলভ করা যায়।</p>
+        <a href="#" class="btn-details">বিস্তারিত</a>
+      </article>
+
+      <!-- Post 10 -->
+      <article class="post-card">
+        <h2 class="post-title"><a href="#">ডাইনামিক প্রোগ্রামিং ৫ (কয়েন চেঞ্জ, ০-১ ন্যাপস্যাক)</a></h2>
+        <div class="post-meta">
+          <span class="meta-icon"><i class="far fa-calendar-alt"></i></span>
+          <span class="meta-date">এপ্রিল ২১, ২০২০</span>
+          <span class="meta-separator">|</span>
+          <span><i class="far fa-user"></i> Shafaet Ashraf</span>
+        </div>
+        <div class="post-tags">
+          <a href="#" class="tag">ডাইনামিক প্রোগ্রামিং</a>
+          <a href="#" class="tag">ডিপি</a>
+        </div>
+        <p class="post-excerpt">কয়েন চেঞ্জ প্রবলেম এবং ০-১ ন্যাপস্যাক প্রবলেম ডাইনামিক প্রোগ্রামিং-এর দুইটি ক্লাসিক সমস্যা। এই লেখায় দুইটি প্রবলেমের ডিটেইলড সমাধান দেখানো হয়েছে।</p>
+        <a href="#" class="btn-details">বিস্তারিত</a>
+      </article>
+
+      <!-- Pagination -->
+      <div class="pagination">
+        <a href="#">← পুরানো লেখা</a>
+      </div>
+
+    </main>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+
+      <!-- About Widget -->
+      <div class="sidebar-widget about-widget">
+        <h3 class="widget-title">আমার সম্পর্কে</h3>
+        <svg class="author-photo" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <rect width="100" height="100" fill="#e0e0e0"/>
+          <circle cx="50" cy="38" r="18" fill="#bbb"/>
+          <ellipse cx="50" cy="85" rx="30" ry="22" fill="#bbb"/>
+        </svg>
+        <p class="author-name">শাফায়েত, সফটওয়্যার ইঞ্জিনিয়ার @ <strong>Meta</strong></p>
+        <a href="about.html" class="about-link">(বিস্তারিত...)</a>
+      </div>
+
+      <!-- Recent Posts Widget -->
+      <div class="sidebar-widget">
+        <h3 class="widget-title">নতুন লেখা</h3>
+        <ul class="link-list">
+          <li><a href="#">ডেটা স্ট্রাকচার: XOR লিংকড লিস্ট</a></li>
+          <li><a href="#">ব্যাকএন্ড ইঞ্জিনিয়ারিং: ডিস্ট্রিবিউটেড ফাইল সিস্টেম</a></li>
+          <li><a href="#">অ্যালগরিদম কমপ্লেক্সিটি (বিগ "O" নোটেশন)</a></li>
+          <li><a href="#">ব্যাকএন্ড ইঞ্জিনিয়ারিং: কনসিস্টেন্ট হ্যাশিং</a></li>
+          <li><a href="#">ব্যাকএন্ড ইঞ্জিনিয়ারিং: লগ-স্ট্রাকচার্ড-ট্রি</a></li>
+        </ul>
+      </div>
+
+      <!-- Categories Widget -->
+      <div class="sidebar-widget">
+        <h3 class="widget-title">ক্যাটেগরি</h3>
+        
+        <p class="category-group-title">📚 বেসিক</p>
+        <ul class="link-list">
+          <li><a href="#">কেন আমি প্রোগ্রামিং শিখবো?</a></li>
+          <li><a href="#">কম্পিউটার বিজ্ঞান কেন পড়বো?</a></li>
+          <li><a href="#">প্রোগ্রামিং কনটেস্ট এবং অনলাইন জাজে হাতেখড়ি</a></li>
+          <li><a href="#">কনফিউজড প্রোগ্রামার</a></li>
+        </ul>
+
+        <p class="category-group-title">⚙️ ব্যাকএন্ড ইঞ্জিনিয়ারিং</p>
+        <ul class="link-list">
+          <li><a href="#">ডিস্ট্রিবিউটেড ফাইল সিস্টেম</a></li>
+          <li><a href="#">ব্লুম ফিল্টার</a></li>
+          <li><a href="#">লগ-স্ট্রাকচার্ড-ট্রি</a></li>
+          <li><a href="#">কনসিস্টেন্ট হ্যাশিং</a></li>
+          <li><a href="#">ক্যাশিং অ্যালগরিদম: এল-আর-ইউ ক্যাশ</a></li>
+        </ul>
+
+        <p class="category-group-title">📊 কমপ্লেক্সিটি</p>
+        <ul class="link-list">
+          <li><a href="#">বিগ "O" নোটেশন</a></li>
+          <li><a href="#">কমপ্লেক্সিটি ক্লাস (P-NP, টুরিং মেশিন ইত্যাদি)</a></li>
+          <li><a href="#">হাল্টিং প্রবলেম</a></li>
+        </ul>
+
+        <p class="category-group-title">🔍 সার্চিং</p>
+        <ul class="link-list">
+          <li><a href="#">বাইনারি সার্চ - ১</a></li>
+          <li><a href="#">বাইনারি সার্চ - ২ (বাইসেকশন)</a></li>
+          <li><a href="#">ফ্লয়েড সাইকেল ফাইন্ডিং অ্যালগোরিদম</a></li>
+        </ul>
+
+        <p class="category-group-title">🗂️ ডেটা স্ট্রাকচার</p>
+        <ul class="link-list">
+          <li><a href="#">লিংকড লিস্ট</a></li>
+          <li><a href="#">স্ট্যাক</a></li>
+          <li><a href="#">কিউ + সার্কুলার কিউ</a></li>
+          <li><a href="#">স্লাইডিং রেঞ্জ মিনিমাম কুয়েরি (ডিকিউ)</a></li>
+          <li><a href="#">ডিসজয়েন্ট সেট (ইউনিয়ন ফাইন্ড)</a></li>
+          <li><a href="#">ট্রাই (প্রিফিক্স ট্রি/রেডিক্স ট্রি)</a></li>
+          <li><a href="#">সেগমেন্ট ট্রি-১</a></li>
+          <li><a href="#">সেগমেন্ট ট্রি-২ (লেজি প্রপাগেশন)</a></li>
+          <li><a href="#">অ্যারে কমপ্রেশন/ম্যাপিং</a></li>
+          <li><a href="#">লোয়েস্ট কমন অ্যানসেস্টর</a></li>
+          <li><a href="#">বাইনারি ইনডেক্সড ট্রি</a></li>
+          <li><a href="#">স্কয়ার-রুট ডিকম্পোজিশন</a></li>
+        </ul>
+
+        <p class="category-group-title">🌐 গ্রাফ থিওরি</p>
+        <ul class="link-list">
+          <li><a href="#">গ্রাফ থিওরিতে হাতেখড়ি</a></li>
+          <li><a href="#">অ্যাডজেসেন্সি ম্যাট্রিক্স</a></li>
+          <li><a href="#">অ্যাডজেসেন্সি লিস্ট</a></li>
+          <li><a href="#">ব্রেথড ফার্স্ট সার্চ (বিএফএস)</a></li>
+          <li><a href="#">ডেপথ ফার্স্ট সার্চ এবং টপোলোজিকাল সর্ট</a></li>
+          <li><a href="#">মিনিমাম স্প্যানিং ট্রি ১ (প্রিমস)</a></li>
+          <li><a href="#">মিনিমাম স্প্যানিং ট্রি ২ (ক্রুসকাল)</a></li>
+          <li><a href="#">টপোলজিকাল সর্ট</a></li>
+          <li><a href="#">ডায়াক্সট্রা</a></li>
+          <li><a href="#">ফ্লয়েড ওয়ার্শল</a></li>
+          <li><a href="#">বেলম্যান ফোর্ড</a></li>
+          <li><a href="#">আর্টিকুলেশন পয়েন্ট এবং ব্রিজ</a></li>
+          <li><a href="#">স্ট্রংলি কানেক্টেড কম্পোনেন্ট</a></li>
+          <li><a href="#">ম্যাক্সিমাম ফ্লো-১</a></li>
+          <li><a href="#">ম্যাক্সিমাম ফ্লো-২</a></li>
+          <li><a href="#">স্টেবল ম্যারেজ প্রবলেম</a></li>
+          <li><a href="#">অয়লার ট্যুর</a></li>
+          <li><a href="#">ট্রি এর ডায়ামিটার নির্ণয়</a></li>
+          <li><a href="#">লংগেস্ট পাথ প্রবলেম</a></li>
+        </ul>
+      </div>
+
+    </aside>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-widgets">
+      <!-- Footer Column 1 -->
+      <div class="footer-widget">
+        <h4 class="widget-title">নতুন লেখা</h4>
+        <ul class="link-list">
+          <li><a href="#">ডেটা স্ট্রাকচার: XOR লিংকড লিস্ট</a></li>
+          <li><a href="#">ব্যাকএন্ড ইঞ্জিনিয়ারিং: ডিস্ট্রিবিউটেড ফাইল সিস্টেম</a></li>
+          <li><a href="#">অ্যালগরিদম কমপ্লেক্সিটি (বিগ "O" নোটেশন)</a></li>
+          <li><a href="#">ব্যাকএন্ড ইঞ্জিনিয়ারিং: কনসিস্টেন্ট হ্যাশিং</a></li>
+          <li><a href="#">ব্যাকএন্ড ইঞ্জিনিয়ারিং: লগ-স্ট্রাকচার্ড-ট্রি</a></li>
+        </ul>
+      </div>
+
+      <!-- Footer Column 2 -->
+      <div class="footer-widget">
+        <h4 class="widget-title">ডেটা স্ট্রাকচার</h4>
+        <ul class="link-list">
+          <li><a href="#">লিংকড লিস্ট</a></li>
+          <li><a href="#">স্ট্যাক</a></li>
+          <li><a href="#">কিউ + সার্কুলার কিউ</a></li>
+          <li><a href="#">সেগমেন্ট ট্রি</a></li>
+          <li><a href="#">বাইনারি ইনডেক্সড ট্রি</a></li>
+        </ul>
+      </div>
+
+      <!-- Footer Column 3 -->
+      <div class="footer-widget">
+        <h4 class="widget-title">আরও দেখুন</h4>
+        <ul class="link-list">
+          <li><a href="#">গেম থিওরি-১</a></li>
+          <li><a href="#">গেম থিওরি-২</a></li>
+          <li><a href="#">গেম থিওরি-৩</a></li>
+          <li><a href="#">মডুলার অ্যারিথমেটিক</a></li>
+          <li><a href="#">প্রাইম জেনারেটর (Sieve of Eratosthenes)</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <p class="copyright">
+          &copy; ২০২৫ শাফায়েতের ব্লগ | 
+          <a href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0</a>
         </p>
-        <div class="hero-actions">
-          <a href="#blog" class="btn-primary">Read Latest Posts</a>
-          <a href="#about" class="btn-ghost">About Me</a>
+        <div class="footer-social">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
         </div>
       </div>
-      <div class="hero-right">
-        <div class="hero-stat-card">
-          <div class="stat-label">Current Focus</div>
-          <div class="stat-value">LLM Research</div>
-          <div class="stat-desc">Transformer architectures & fine-tuning techniques</div>
-        </div>
-        <div class="hero-stat-card">
-          <div class="stat-label">Institution</div>
-          <div class="stat-value">DIU</div>
-          <div class="stat-desc">B.Sc. CSE — Daffodil International University</div>
-        </div>
-        <div class="hero-stat-card">
-          <div class="stat-label">Latest Project</div>
-          <div class="stat-value">Project-Rainfall</div>
-          <div class="stat-desc">Rainfall dataset manipulation, analysis and visualization</div>
-        </div>
-      </div>
-    </div>
-    <div class="scroll-hint">
-      <span>Scroll</span>
-      <div class="scroll-line"></div>
-    </div>
-  </section>
-
-  <!-- TICKER -->
-  <div class="ticker-wrap">
-    <div class="ticker-inner">
-      <span class="ticker-item">AI Research</span>
-      <span class="ticker-item">LLM Experiments</span>
-      <span class="ticker-item">Programming</span>
-      <span class="ticker-item">Lifestyle</span>
-      <span class="ticker-item">Transformer Architecture</span>
-      <span class="ticker-item">Ollama</span>
-      <span class="ticker-item">Python & ML</span>
-      <span class="ticker-item">DIU · CSE</span>
-      <span class="ticker-item">AI Research</span>
-      <span class="ticker-item">LLM Experiments</span>
-      <span class="ticker-item">Programming</span>
-      <span class="ticker-item">Lifestyle</span>
-      <span class="ticker-item">Transformer Architecture</span>
-      <span class="ticker-item">Ollama</span>
-      <span class="ticker-item">Python & ML</span>
-      <span class="ticker-item">DIU · CSE</span>
-    </div>
-  </div>
-
-  <!-- CATEGORIES -->
-  <section id="categories">
-    <div class="section-inner">
-      <div class="section-header fade-up">
-        <div class="section-eyebrow">Browse Topics</div>
-        <h2 class="section-title">What I Write About</h2>
-      </div>
-      <div class="categories-grid fade-up">
-        <a class="cat-card" href="#blog" onclick="filterPosts('lifestyle')">
-          <span class="cat-icon">🌿</span>
-          <div class="cat-name">Lifestyle</div>
-          <div class="cat-count">Daily life · Reflections · Growth</div>
-        </a>
-        <a class="cat-card" href="#blog" onclick="filterPosts('ai')">
-          <span class="cat-icon">🧠</span>
-          <div class="cat-name">AI Research</div>
-          <div class="cat-count">Papers · Concepts · Analysis</div>
-        </a>
-        <a class="cat-card" href="#blog" onclick="filterPosts('llm')">
-          <span class="cat-icon">⚡</span>
-          <div class="cat-name">LLM Experiments</div>
-          <div class="cat-count">Ollama · Fine-tuning · Logs</div>
-        </a>
-        <a class="cat-card" href="#blog" onclick="filterPosts('prog')">
-          <span class="cat-icon">💻</span>
-          <div class="cat-name">Programming</div>
-          <div class="cat-count">DSA · Concepts · Projects</div>
-        </a>
-        <a class="cat-card" href="#blog" onclick="filterPosts('other')">
-          <span class="cat-icon">✨</span>
-          <div class="cat-name">Others</div>
-          <div class="cat-count">Chess · Poetry · Thoughts</div>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- BLOG -->
-  <section id="blog">
-    <div class="section-inner">
-      <div class="featured-label">Featured Post</div>
-
-      <!-- Featured Post (dynamically loaded) -->
-      <div class="featured-post" id="featuredPost">
-        <!-- Will be populated by script.js -->
-      </div>
-
-      <!-- Blog Cards (dynamically loaded) -->
-      <div class="blog-grid" id="blogGrid">
-        <!-- Will be populated by script.js -->
-      </div>
-    </div>
-  </section>
-
-  <!-- ABOUT -->
-  <section id="about">
-    <div class="section-inner">
-      <div class="about-grid">
-        <div class="about-left fade-up">
-          <div class="about-avatar">
-            <img src="assets/avater.jpg" alt="MD Ratul Hossen" />
-            <div class="avatar-overlay"></div>
-            <div class="avatar-name">
-              <h3>MD Ratul Hossen</h3>
-              <p>AI Researcher · CS Student</p>
-            </div>
-          </div>
-          <div class="about-links">
-            <a class="about-link" href="https://itzratul.github.io/portfolio" target="_blank">Portfolio</a>
-            <a class="about-link" href="https://linkedin.com/in/mdratulhossen" target="_blank">LinkedIn</a>
-            <a class="about-link" href="https://github.com/itzRatul" target="_blank">GitHub</a>
-            <a class="about-link" href="https://kaggle.com/mdratulhossen" target="_blank">Kaggle</a>
-            <a class="about-link" href="mailto:251-15-596@diu.edu.bd">Email</a>
-          </div>
-        </div>
-
-        <div class="about-right fade-up">
-          <div class="section-eyebrow">About Me</div>
-          <h2 class="section-title" style="margin-bottom:1.5rem;">The Person Behind<br><em
-              style="font-style:italic;color:var(--accent)">The Blog</em></h2>
-
-          <p class="about-bio">
-            I'm <strong>MD Ratul Hossen</strong>, a Computer Science student at <strong>Daffodil International
-              University</strong>, Dhaka. My obsession? <strong>Large Language Models</strong> — understanding how they
-            work from the ground up, deploying them locally, and one day building scalable LLMs from scratch.
-          </p>
-          <p class="about-bio">
-            Beyond the technical, I write about <strong>life as a student in Bangladesh</strong>, the discipline I've
-            learned from chess, and occasional poetry that refuses to stay in my head. This blog is my lab notebook, my
-            journal, and my contribution to the community — all in one.
-          </p>
-
-          <div class="skills-section">
-            <div class="skills-title">Technical Arsenal</div>
-            <div class="skills-list">
-              <span class="skill-tag">Python</span>
-              <span class="skill-tag">PyTorch</span>
-              <span class="skill-tag">Ollama</span>
-              <span class="skill-tag">Transformers</span>
-              <span class="skill-tag">Scikit-learn</span>
-              <span class="skill-tag">Pandas / NumPy</span>
-              <span class="skill-tag">C & C++</span>
-              <span class="skill-tag">Hugging Face</span>
-              <span class="skill-tag">n8n</span>
-              <span class="skill-tag">Telegram API</span>
-            </div>
-          </div>
-
-          <div class="skills-section">
-            <div class="skills-title">Education</div>
-            <div class="education-item">
-              <div class="edu-year">Jan 2025 — 2028</div>
-              <div class="edu-title">B.Sc. in Computer Science & Engineering</div>
-              <div class="edu-school">Daffodil International University, Dhaka · CGPA 3.69+</div>
-            </div>
-            <div class="education-item">
-              <div class="edu-year">2023</div>
-              <div class="edu-title">Higher Secondary Certificate (HSC)</div>
-              <div class="edu-school">Noapara Govt. College · GPA 4.58 · Science</div>
-            </div>
-          </div>
-
-          <div class="skills-section">
-            <div class="skills-title">Club Memberships</div>
-            <div class="about-links">
-              <span class="about-link">DIU Computer & Programming Club</span>
-              <span class="about-link">Daffodil AI Club</span>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- NEWSLETTER -->
-  <section id="newsletter">
-    <div class="newsletter-inner fade-up">
-      <div class="section-eyebrow">Stay Updated</div>
-      <h2 class="newsletter-title">Get New Posts<br><em>Straight to You</em></h2>
-      <p class="newsletter-sub">No spam. Just thoughtful writing on AI, code, and life — whenever something worth
-        sharing happens.</p>
-      <div class="newsletter-form">
-        <input class="newsletter-input" type="email" placeholder="your@email.com" id="emailInput" />
-        <button class="newsletter-btn" onclick="subscribe()">Subscribe →</button>
-      </div>
-      <p id="subMsg"
-        style="font-family:'JetBrains Mono',monospace;font-size:0.65rem;color:var(--accent);margin-top:0.75rem;opacity:0;transition:opacity 0.3s;letter-spacing:0.1em;">
-        ✓ You're subscribed! Welcome aboard.
-      </p>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-    <div class="footer-inner">
-      <div class="footer-logo">
-        &lt;ratul/&gt;
-        <small>AI · Code · Life</small>
-      </div>
-      <ul class="footer-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#blog">Blog</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="https://github.com/itzRatul" target="_blank">GitHub</a></li>
-        <li><a href="https://linkedin.com/in/mdratulhossen" target="_blank">LinkedIn</a></li>
-      </ul>
-      <div class="footer-copy">© 2025 MD Ratul Hossen · Dhaka, Bangladesh</div>
     </div>
   </footer>
 
-  <!-- MODAL -->
-  <div class="modal-overlay" id="modalOverlay" onclick="closeModalOutside(event)">
-    <div class="modal" id="modal">
-      <button class="modal-close" onclick="closeModal()">✕ Close</button>
-      <div id="modalContent"></div>
-    </div>
-  </div>
+  <!-- Scroll to Top -->
+  <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
 
-  <!-- Marked.js for Markdown parsing -->
-  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <script src="script.js"></script>
 </body>
-
 </html>

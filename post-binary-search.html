@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>বাইনারি সার্চ - ১ | শাফায়েতের ব্লগ</title>
+  <meta name="description" content="বাইনারি সার্চ টিউটোরিয়াল। সর্টেড অ্যারেতে কিভাবে দ্রুত কোনো সংখ্যা খুজে বের করা যায় সেই পদ্ধতি।">
+  <meta name="keywords" content="বাইনারি সার্চ,অ্যালগোরিদম,প্রোগ্রামিং,শাফায়েতের ব্লগ">
+  <meta property="og:title" content="বাইনারি সার্চ - ১ | শাফায়েতের ব্লগ">
+  <meta property="og:type" content="article">
+  <meta property="og:description" content="বাইনারি সার্চ টিউটোরিয়াল - সর্টেড অ্যারেতে সার্চ করার পদ্ধতি।">
+  <meta property="og:site_name" content="শাফায়েতের ব্লগ">
+  <meta property="article:published_time" content="2015-06-06T18:40:56+00:00">
+  <meta property="article:modified_time" content="2016-08-04T09:27:55+00:00">
+  <meta property="article:tag" content="বাইনারি সার্চ">
+  <meta property="article:section" content="অ্যালগরিদম/প্রবলেম সলভিং">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- MathJax for LaTeX math rendering -->
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']], processEscapes: true}
+    });
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+<body class="single-post">
+
+  <!-- Top Social Bar -->
+  <div class="top-bar">
+    <div class="container">
+      <div class="social-icons">
+        <a href="https://twitter.com/shafaet90" title="Twitter" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.linkedin.com/in/shafaetcsedu" title="LinkedIn" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="http://github.com/Shafaet" title="GitHub" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="header-content">
+      <div class="site-brand">
+        <a href="index.html" class="site-title">শাফায়েতের ব্লগ</a>
+        <p class="site-subtitle">প্রোগ্রামিং, অ্যালগরিদম, ব্যাকএন্ড ইঞ্জিনিয়ারিং</p>
+      </div>
+      <nav class="main-nav">
+        <button class="hamburger" aria-label="Menu" id="menuToggle">
+          <i class="fas fa-bars"></i>
+        </button>
+        <ul class="nav-list" id="navList">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="algorithms.html">অ্যালগরিদম নিয়ে যত লেখা!</a></li>
+          <li><a href="about.html">আমার সম্পর্কে…</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="hero-banner">
+      <h1>বাইনারি সার্চ – ১</h1>
+      <p>অ্যালগরিদম টিউটোরিয়াল</p>
+    </div>
+  </header>
+
+  <!-- Main Layout -->
+  <div class="page-wrapper">
+    <!-- Article Content -->
+    <main class="main-content">
+      <article class="single-article">
+        <header class="article-header">
+          <h1 class="article-title">বাইনারি সার্চ – ১</h1>
+          <div class="post-meta">
+            <span class="meta-icon"><i class="far fa-calendar-alt"></i></span>
+            <span class="meta-date">জুন ৭, ২০১৫</span>
+            <span class="meta-separator">|</span>
+            <span><i class="far fa-user"></i> <a href="about.html">Shafaet Ashraf</a></span>
+          </div>
+          <div class="post-tags">
+            <a href="#" class="tag">অ্যালগরিদম/প্রবলেম সলভিং</a>
+            <a href="#" class="tag">প্রোগ্রামিং</a>
+            <a href="#" class="tag">বাইনারি সার্চ</a>
+          </div>
+        </header>
+
+        <!-- Social Share Buttons -->
+        <div class="social-share">
+          <a href="#" class="share-btn share-facebook" title="Share on Facebook"><i class="fab fa-facebook-f"></i> <span>Share</span></a>
+          <a href="#" class="share-btn share-twitter" title="Share on Twitter"><i class="fab fa-twitter"></i> <span>Tweet</span></a>
+          <a href="#" class="share-btn share-linkedin" title="Share on LinkedIn"><i class="fab fa-linkedin-in"></i> <span>Share</span></a>
+        </div>
+
+        <!-- Article Body -->
+        <div class="article-body">
+          <p>ডিকশনারিতে লাখ লাখ শব্দ থাকলেও প্রয়োজনীয় শব্দটা খুজে পেতে কখনো খুব বেশি সময় লাগে না। এটার কারণ হলো শব্দগুলো অক্ষর অনুযায়ী সাজানো থাকে। বাইনারি সার্চ হলো অনেকটা এরকম একটা পদ্ধতি যেটা ব্যবহার করে একটা অ্যারে থেকে কোনো একটা তথ্য দ্রুত খুজে বের করা যায়।</p>
+
+          <p>ধরো তোমার কাছে একটা অ্যারেতে অনেকগুলো সংখ্যা আছে এরকম:</p>
+
+          <blockquote>
+            $100, 2, 10, 50, 20, 500, 100, 150, 200, 1000, 100$
+          </blockquote>
+
+          <p>সংখ্যাগুলো এলোমেলোভাবে সাজানো থাকায় এখান থেকে একটা নির্দিষ্ট সংখ্যা খুজে পাওয়া সহজ না। তুমি যদি অ্যারে থেকে ৫০০ সংখ্যাটা খুজতে চাও তাহলে সবগুলো ইনডেক্সই পরীক্ষা করে দেখতে হবে, এটাকে বলা হয় লিনিয়ার সার্চ। অ্যারের আকার যদি $n$ হয় তাহলে লিনিয়ার সার্চের টাইম <a href="#">কমপ্লেক্সিটি</a> হলো $O(n)$।</p>
+
+          <p>কিন্তু যদি সংখ্যাগুলো সাজানো থাকে তাহলে খুজে পাওয়া অনেক সহজ হয়ে যায়:</p>
+
+          <blockquote>
+            $2, 10, 20, 50, 100, 100, 100, 150, 200, 500, 1000$
+          </blockquote>
+
+          <h2>বাইনারি সার্চ কিভাবে কাজ করে</h2>
+
+          <p>এখন যদি ১৫০ সংখ্যাটা খুজে বের করতে হয় তাহলে আমরা প্রথমে ঠিক মাঝের ইনডেক্সটা পরীক্ষা করবো। প্রথম ইনডেক্স ০ এবং শেষের ইনডেক্স ১০ হলে মাঝের ইনডেক্সটা হলো $(0+10)/2 = 5$ তম ইনডেক্স।</p>
+
+          <p>মাঝের ইনডেক্সের সংখ্যাটা ১০০ যা ১৫০ এর থেকে ছোট — আমরা জেনে গেলাম যে সংখ্যাটা ডান পাশে কোথাও আছে। বামের অংশ আমাদের আর দরকার নাই। এভাবে প্রতিবার অ্যারের অর্ধেক অংশ বাতিল করে দিচ্ছি।</p>
+
+          <p>একটা সংখ্যা $n$ কে সর্বোচ্চ কয়বার ২ দিয়ে ভাগ করা যায় যতক্ষণ না সংখ্যাটা ১ হয়ে যাচ্ছে? উত্তর হলো $\log_{2}n$। তাই বাইনারি সার্চে সর্বোচ্চ $\log_{2}(n)$ সংখ্যক ধাপের পর আমরা দরকারি সংখ্যাটা খুজে পাবো। <a href="#">কমপ্লেক্সিটি</a> $O(\log_{2}n)$।</p>
+
+          <h2>পাইথন ইমপ্লিমেন্টেশন</h2>
+
+          <p>নিচের পাইথন কোডে বাইনারি সার্চের ইমপ্লিমেন্টেশন দেখানো হয়েছে:</p>
+
+          <!-- Code Block -->
+          <div class="code-block" data-lang="Python">
+            <div class="code-toolbar">
+              <span class="code-lang">Python</span>
+              <button class="code-copy-btn" title="Copy Code"><i class="far fa-copy"></i></button>
+            </div>
+            <div class="code-content">
+              <table class="code-table">
+                <tr>
+                  <td class="line-numbers">
+                    <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span>
+                  </td>
+                  <td class="code-lines"><pre><code><span class="kw">def</span> <span class="fn">search</span>(array, key):
+    begin = <span class="num">0</span>
+    end = <span class="fn">len</span>(array) - <span class="num">1</span>
+    index = <span class="kw">None</span>
+    <span class="kw">while</span> begin &lt;= end:
+        mid = (begin + end) // <span class="num">2</span>
+        <span class="kw">if</span> key == array[mid]:
+            index = mid  <span class="cm"># Found, save index</span>
+            <span class="kw">break</span>
+        <span class="kw">elif</span> key &gt; array[mid]: begin = mid + <span class="num">1</span>
+        <span class="kw">elif</span> key &lt; array[mid]: end = mid - <span class="num">1</span>
+    <span class="kw">return</span> index</code></pre>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+
+          <h2>সর্টিং এবং বাইনারি সার্চ</h2>
+
+          <p>বাইনারি সার্চ করার আগে অবশ্যই সংখ্যাগুলোকে সর্ট করে নিতে হবে। একটা অ্যারে $O(n \times \log_{2}n)$ এর কম কমপ্লেক্সিটিতে সর্ট করা যায় না। তাহলে শুধু একবার সার্চের জন্য সর্ট করা লাভজনক না — কিন্তু বারবার সার্চ করতে হলে সর্ট করে রাখাই বুদ্ধিমানের কাজ।</p>
+
+          <h2>লোয়ার বাউন্ড</h2>
+
+          <p><strong>লোয়ার বাউন্ড</strong> হলো সবথেকে বামের ইনডেক্স যেখানে নতুন সংখ্যা $X$ ঢুকালে অ্যারেটা সর্টেড থাকবে। সহজ কথায় সবথেকে বামের যে ইনডেক্সে $X$ এর সমান বা বড় কোনো সংখ্যা আছে সেই ইনডেক্সটাই হলো লোয়ার বাউন্ড।</p>
+
+          <p>উদাহরণ:</p>
+          <blockquote>
+            $10, 20, 20, 30, 30, 40, 50$
+          </blockquote>
+          <p>এখানে $20$ এর লোয়ার বাউন্ড হলো ইনডেক্স ১, এবং $25$ এর লোয়ার বাউন্ড হলো ইনডেক্স ৩।</p>
+
+          <!-- Code Block 2 -->
+          <div class="code-block" data-lang="Python">
+            <div class="code-toolbar">
+              <span class="code-lang">Python</span>
+              <button class="code-copy-btn" title="Copy Code"><i class="far fa-copy"></i></button>
+            </div>
+            <div class="code-content">
+              <table class="code-table">
+                <tr>
+                  <td class="line-numbers">
+                    <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span>
+                  </td>
+                  <td class="code-lines"><pre><code><span class="kw">def</span> <span class="fn">searchLowerBound</span>(array, key):
+    begin = <span class="num">0</span>
+    end = <span class="fn">len</span>(array) - <span class="num">1</span>
+    index = -<span class="num">1</span>
+    <span class="kw">while</span> begin &lt;= end:
+        mid = (begin + end) // <span class="num">2</span>
+        <span class="kw">if</span> key == array[mid]:
+            index = mid
+            end = mid - <span class="num">1</span>  <span class="cm"># Keep searching left</span>
+        <span class="kw">elif</span> key &gt; array[mid]: begin = mid + <span class="num">1</span>
+        <span class="kw">elif</span> key &lt; array[mid]: end = mid - <span class="num">1</span>
+    <span class="kw">return</span> begin</code></pre>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+
+          <h2>আপার বাউন্ড</h2>
+
+          <p><strong>আপার বাউন্ড</strong> হলো সবথেকে ডানের ইনডেক্স যেখানে নতুন সংখ্যা ঢুকালে অ্যারেটা সর্টেড থাকবে। তারমানে সবথেকে বামের যে ইনডেক্সে $X$ এর বড় কোনো সংখ্যা আছে সেটাই আপার বাউন্ড।</p>
+
+          <p>পরের পর্বে বাইসেকশন মেথড নিয়ে আলোচনা করা হবে।</p>
+
+          <h2>প্র্যাকটিস প্রবলেম</h2>
+          <ul>
+            <li><a href="https://uva.onlinejudge.org/index.php?option=onlinejudge&Itemid=8&page=show_problem&problem=1552" target="_blank">UVa 10611 - The Playboy Chimp</a></li>
+            <li><a href="http://www.lightoj.com/volume_showproblem.php?problem=1088" target="_blank">LightOJ 1088 - Points in Segments</a></li>
+          </ul>
+
+          <p>হ্যাপি কোডিং!</p>
+
+          <p class="footnote">* কাউন্টিং সর্ট বা রেডিক্স সর্ট ব্যবহার করে $O(n)$ এ সর্টিং করা যায় তবে সেগুলো বিশেষ ধরণের ইনপুটের ক্ষেত্রে কাজ করে।</p>
+        </div>
+
+        <!-- View Count -->
+        <div class="view-count">
+          <i class="far fa-eye"></i> ৭৬,৬৮৪ বার পড়া হয়েছে
+        </div>
+
+        <!-- Entry Footer -->
+        <footer class="article-footer">
+          <div class="article-categories">
+            <span><i class="far fa-folder-open"></i> ক্যাটেগরি:</span>
+            <a href="#">অ্যালগরিদম/প্রবলেম সলভিং</a>,
+            <a href="#">প্রোগ্রামিং</a>
+          </div>
+          <div class="article-tags-footer">
+            <span><i class="fas fa-tags"></i> ট্যাগ:</span>
+            <a href="#">বাইনারি সার্চ</a>
+          </div>
+        </footer>
+
+        <!-- Social Share (Bottom) -->
+        <div class="social-share">
+          <a href="#" class="share-btn share-facebook" title="Share on Facebook"><i class="fab fa-facebook-f"></i> <span>Share</span></a>
+          <a href="#" class="share-btn share-twitter" title="Share on Twitter"><i class="fab fa-twitter"></i> <span>Tweet</span></a>
+          <a href="#" class="share-btn share-linkedin" title="Share on LinkedIn"><i class="fab fa-linkedin-in"></i> <span>Share</span></a>
+        </div>
+
+        <!-- Post Navigation -->
+        <nav class="post-navigation">
+          <a href="#" class="nav-previous">
+            <span class="nav-label"><i class="fas fa-arrow-left"></i> আগের লেখা</span>
+            <span class="nav-title">হাইস্কুল প্রোগ্রামিং প্রতিযোগিতার প্রাথমিক প্রস্তুতি</span>
+          </a>
+          <a href="#" class="nav-next">
+            <span class="nav-label">পরের লেখা <i class="fas fa-arrow-right"></i></span>
+            <span class="nav-title">বাইনারি সার্চ – ২ (বাইসেকশন)</span>
+          </a>
+        </nav>
+
+        <!-- Comments Section -->
+        <section class="comments-section">
+          <h3 class="comments-title"><i class="far fa-comments"></i> মন্তব্য (১)</h3>
+          
+          <div class="comment-item">
+            <div class="comment-avatar">
+              <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                <rect width="40" height="40" fill="#e0e0e0" rx="4"/>
+                <circle cx="20" cy="15" r="7" fill="#bbb"/>
+                <ellipse cx="20" cy="35" rx="12" ry="9" fill="#bbb"/>
+              </svg>
+            </div>
+            <div class="comment-content">
+              <div class="comment-meta">
+                <strong class="comment-author">Masud Rana</strong>
+                <span class="comment-date">জুলাই ৭, ২০১৫ at ৮:৩৫ pm</span>
+              </div>
+              <p>ভালো টিউটোরিয়াল!</p>
+              <a href="#" class="comment-reply">Reply</a>
+            </div>
+          </div>
+
+          <!-- Comment Form -->
+          <div class="comment-form">
+            <h4>মন্তব্য করুন</h4>
+            <form>
+              <div class="form-group">
+                <label for="comment">মন্তব্য</label>
+                <textarea id="comment" name="comment" rows="6" placeholder="আপনার মন্তব্য লিখুন..." required></textarea>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="author">নাম *</label>
+                  <input type="text" id="author" name="author" required>
+                </div>
+                <div class="form-group">
+                  <label for="email">ইমেইল *</label>
+                  <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                  <label for="url">ওয়েবসাইট</label>
+                  <input type="url" id="url" name="url">
+                </div>
+              </div>
+              <button type="submit" class="btn-submit">মন্তব্য পোস্ট করুন</button>
+            </form>
+          </div>
+        </section>
+
+      </article>
+    </main>
+
+    <!-- Sidebar (same as original with full links) -->
+    <aside class="sidebar">
+
+      <!-- About Widget -->
+      <div class="sidebar-widget about-widget">
+        <h3 class="widget-title">আমার সম্পর্কে</h3>
+        <svg class="author-photo" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <rect width="100" height="100" fill="#e0e0e0"/>
+          <circle cx="50" cy="38" r="18" fill="#bbb"/>
+          <ellipse cx="50" cy="85" rx="30" ry="22" fill="#bbb"/>
+        </svg>
+        <p class="author-name">শাফায়েত, সফটওয়্যার ইঞ্জিনিয়ার @ <strong>Meta</strong></p>
+        <a href="about.html" class="about-link">(বিস্তারিত...)</a>
+      </div>
+
+      <!-- Recent Posts Widget -->
+      <div class="sidebar-widget">
+        <h3 class="widget-title">নতুন লেখা</h3>
+        <ul class="link-list">
+          <li><a href="#">ডেটা স্ট্রাকচার: XOR লিংকড লিস্ট</a></li>
+          <li><a href="#">ব্যাকএন্ড ইঞ্জিনিয়ারিং: ডিস্ট্রিবিউটেড ফাইল সিস্টেম</a></li>
+          <li><a href="#">অ্যালগরিদম কমপ্লেক্সিটি (বিগ "O" নোটেশন)</a></li>
+          <li><a href="#">ব্যাকএন্ড ইঞ্জিনিয়ারিং: কনসিস্টেন্ট হ্যাশিং</a></li>
+          <li><a href="#">ব্যাকএন্ড ইঞ্জিনিয়ারিং: লগ-স্ট্রাকচার্ড-ট্রি</a></li>
+        </ul>
+      </div>
+
+      <!-- Categories Widget -->
+      <div class="sidebar-widget">
+        <h3 class="widget-title">ক্যাটেগরি</h3>
+        
+        <p class="category-group-title">📚 বেসিক</p>
+        <ul class="link-list">
+          <li><a href="#">কেন আমি প্রোগ্রামিং শিখবো?</a></li>
+          <li><a href="#">কম্পিউটার বিজ্ঞান কেন পড়বো?</a></li>
+          <li><a href="#">প্রোগ্রামিং কনটেস্ট এবং অনলাইন জাজে হাতেখড়ি</a></li>
+          <li><a href="#">কনফিউজড প্রোগ্রামার</a></li>
+        </ul>
+
+        <p class="category-group-title">⚙️ ব্যাকএন্ড ইঞ্জিনিয়ারিং</p>
+        <ul class="link-list">
+          <li><a href="#">ডিস্ট্রিবিউটেড ফাইল সিস্টেম</a></li>
+          <li><a href="#">ব্লুম ফিল্টার</a></li>
+          <li><a href="#">লগ-স্ট্রাকচার্ড-ট্রি</a></li>
+          <li><a href="#">কনসিস্টেন্ট হ্যাশিং</a></li>
+          <li><a href="#">ক্যাশিং অ্যালগরিদম: এল-আর-ইউ ক্যাশ</a></li>
+        </ul>
+
+        <p class="category-group-title">🔍 সার্চিং</p>
+        <ul class="link-list">
+          <li><a href="post-binary-search.html"><strong style="color:var(--primary)">বাইনারি সার্চ - ১</strong></a></li>
+          <li><a href="#">বাইনারি সার্চ - ২ (বাইসেকশন)</a></li>
+          <li><a href="#">ফ্লয়েড সাইকেল ফাইন্ডিং অ্যালগোরিদম</a></li>
+        </ul>
+
+        <p class="category-group-title">🗂️ ডেটা স্ট্রাকচার</p>
+        <ul class="link-list">
+          <li><a href="#">লিংকড লিস্ট</a></li>
+          <li><a href="#">স্ট্যাক</a></li>
+          <li><a href="#">কিউ + সার্কুলার কিউ</a></li>
+          <li><a href="#">সেগমেন্ট ট্রি-১</a></li>
+          <li><a href="#">সেগমেন্ট ট্রি-২ (লেজি প্রপাগেশন)</a></li>
+          <li><a href="#">বাইনারি ইনডেক্সড ট্রি</a></li>
+          <li><a href="#">স্কয়ার-রুট ডিকম্পোজিশন</a></li>
+        </ul>
+
+        <p class="category-group-title">🌐 গ্রাফ থিওরি</p>
+        <ul class="link-list">
+          <li><a href="#">গ্রাফ থিওরিতে হাতেখড়ি</a></li>
+          <li><a href="#">ব্রেথড ফার্স্ট সার্চ (বিএফএস)</a></li>
+          <li><a href="#">ডায়াক্সট্রা</a></li>
+          <li><a href="#">ফ্লয়েড ওয়ার্শল</a></li>
+          <li><a href="#">বেলম্যান ফোর্ড</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-widgets">
+      <div class="footer-widget">
+        <h4 class="widget-title">নতুন লেখা</h4>
+        <ul class="link-list">
+          <li><a href="#">ডেটা স্ট্রাকচার: XOR লিংকড লিস্ট</a></li>
+          <li><a href="#">ব্যাকএন্ড ইঞ্জিনিয়ারিং: ডিস্ট্রিবিউটেড ফাইল সিস্টেম</a></li>
+          <li><a href="#">অ্যালগরিদম কমপ্লেক্সিটি (বিগ "O" নোটেশন)</a></li>
+          <li><a href="#">ব্যাকএন্ড ইঞ্জিনিয়ারিং: কনসিস্টেন্ট হ্যাশিং</a></li>
+          <li><a href="#">ব্যাকএন্ড ইঞ্জিনিয়ারিং: লগ-স্ট্রাকচার্ড-ট্রি</a></li>
+        </ul>
+      </div>
+      <div class="footer-widget">
+        <h4 class="widget-title">ডেটা স্ট্রাকচার</h4>
+        <ul class="link-list">
+          <li><a href="#">লিংকড লিস্ট</a></li>
+          <li><a href="#">স্ট্যাক</a></li>
+          <li><a href="#">কিউ + সার্কুলার কিউ</a></li>
+          <li><a href="#">সেগমেন্ট ট্রি</a></li>
+          <li><a href="#">বাইনারি ইনডেক্সড ট্রি</a></li>
+        </ul>
+      </div>
+      <div class="footer-widget">
+        <h4 class="widget-title">লাইসেন্স</h4>
+        <div style="color: var(--footer-text); font-size: 0.88rem; line-height: 1.7;">
+          <p><img src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" alt="CC License" style="margin-bottom: 8px;"></p>
+          <p>This work is licensed under a <a href="http://creativecommons.org/licenses/by-nc-nd/4.0/" style="color: var(--primary-light);" target="_blank">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>.</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p class="copyright">
+          &copy; ২০২৫ শাফায়েতের ব্লগ | 
+          <a href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0</a>
+        </p>
+        <div class="footer-social">
+          <a href="https://twitter.com/shafaet90" aria-label="Twitter" target="_blank"><i class="fab fa-twitter"></i></a>
+          <a href="https://www.linkedin.com/in/shafaetcsedu" aria-label="LinkedIn" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+          <a href="http://github.com/Shafaet" aria-label="GitHub" target="_blank"><i class="fab fa-github"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll to Top -->
+  <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <script src="script.js"></script>
+  <script>
+    // Copy code button functionality
+    document.querySelectorAll('.code-copy-btn').forEach(btn => {
+      btn.addEventListener('click', function() {
+        const codeBlock = this.closest('.code-block');
+        const code = codeBlock.querySelector('code').textContent;
+        navigator.clipboard.writeText(code).then(() => {
+          this.innerHTML = '<i class="fas fa-check"></i>';
+          setTimeout(() => {
+            this.innerHTML = '<i class="far fa-copy"></i>';
+          }, 2000);
+        });
+      });
+    });
+  </script>
+</body>
+</html>
