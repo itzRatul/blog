@@ -1,0 +1,74 @@
+---
+title: 'Java (Basics)'
+date: 'জুলাই ১৮, ২০২৬'
+tags: ['Java', 'Programming', 'OOP']
+excerpt: 'জাভা প্রোগ্রামিং ল্যাঙ্গুয়েজের একদম বেসিক থেকে শুরু করার গাইড।'
+category: 'ডেটা স্ট্রাকচার'
+---
+
+## ভূমিকা
+
+জাভা একটি অবজেক্ট ওরিয়েন্টেড প্রোগ্রামিং ল্যাঙ্গুয়েজ যা "Write Once, Run Anywhere" নীতির উপর ভিত্তি করে তৈরি। 
+
+## বেসিক সিনট্যাক্স (Basic Syntax)
+
+### ১. হ্যালো ওয়ার্ল্ড (Hello World)
+```java
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+    }
+}
+```
+
+### ২. ভেরিয়েবলস ও ডেটা টাইপ (Variables & Data Types)
+```java
+int myNum = 5;
+float myFloatNum = 5.99f;
+char myLetter = 'D';
+boolean myBool = true;
+String myText = "Hello";
+```
+
+### ৩. কন্ডিশনাল স্টেটমেন্ট (Conditional Statements)
+```java
+int time = 20;
+if (time < 18) {
+  System.out.println("Good day.");
+} else {
+  System.out.println("Good evening.");
+}
+```
+
+### ৪. লুপস (Loops)
+```java
+for (int i = 0; i < 5; i++) {
+  System.out.println(i);
+}
+```
+
+### ৫. মেথডস (Methods)
+```java
+static void myMethod() {
+  System.out.println("I just got executed!");
+}
+
+public static void main(String[] args) {
+  myMethod();
+}
+```
+
+## অবজেক্ট ওরিয়েন্টেড প্রোগ্রামিং (OOP)
+
+জাভাতে সবকিছুই ক্লাস এবং অবজেক্ট ভিত্তিক।
+```java
+public class Car {
+  String color;
+  int year;
+  
+  public Car(String color, int year) {
+    this.color = color;
+    this.year = year;
+  }
+}
+```

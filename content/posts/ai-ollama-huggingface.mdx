@@ -1,0 +1,51 @@
+---
+title: 'AI Models: Ollama & Hugging Face'
+date: 'জুলাই ১৮, ২০২৬'
+tags: ['AI', 'Ollama', 'Hugging Face', 'LLM']
+excerpt: 'লোকাল মেশিনে AI রান করার জন্য Ollama এবং মডেল হাব হিসেবে Hugging Face এর বেসিক।'
+category: 'ডেটা স্ট্রাকচার'
+---
+
+## ভূমিকা
+
+বর্তমানের AI এর যুগে, লার্জ ল্যাঙ্গুয়েজ মডেল (LLM) ব্যবহার করা অনেক সহজ হয়ে গেছে। এই পোস্টে আমরা জানব কিভাবে Ollama ব্যবহার করে লোকালি AI রান করা যায় এবং Hugging Face থেকে কিভাবে মডেল ব্যবহার করতে হয়।
+
+## Ollama
+
+Ollama হলো এমন একটি টুল যার সাহায্যে আপনি খুব সহজেই আপনার নিজের কম্পিউটারে Llama 3, Mistral এর মতো বড় বড় মডেল রান করতে পারবেন।
+
+### ইনস্টলেশন
+Terminal এ নিচের কমান্ডটি রান করুন (Linux/macOS):
+```bash
+curl -fsSL https://ollama.com/install.sh | sh
+```
+
+### মডেল রান করা
+একটি মডেল রান করতে:
+```bash
+ollama run llama3
+```
+এটি মডেলটি ডাউনলোড করবে এবং একটি চ্যাট প্রম্পট ওপেন করবে যেখানে আপনি মডেলটির সাথে চ্যাট করতে পারবেন।
+
+## Hugging Face
+
+Hugging Face হলো AI মডেল এবং ডেটাসেটের সবচেয়ে বড় সংগ্রহশালা। একে "GitHub for AI" বলা হয়ে থাকে।
+
+### Transformers লাইব্রেরি
+Hugging Face এর মডেল ব্যবহার করতে পাইথনে `transformers` লাইব্রেরি ব্যবহৃত হয়।
+
+```bash
+pip install transformers
+```
+
+### টেক্সট জেনারেশন উদাহরণ
+```python
+from transformers import pipeline
+
+generator = pipeline('text-generation', model='gpt2')
+result = generator("Hello, I am a software engineer and I", max_length=30)
+print(result)
+```
+
+## উপসংহার
+Ollama দিয়ে লোকাল পিসিতে অফলাইনে AI ব্যবহার করা যায়, আর Hugging Face হলো AI ডেভেলপমেন্টের মূল কেন্দ্রবিন্দু।

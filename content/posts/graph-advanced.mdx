@@ -1,0 +1,38 @@
+---
+title: 'Graph Theory (All)'
+date: 'জুলাই ১৮, ২০২৬'
+tags: ['Graph Theory', 'Algorithm', 'BFS', 'DFS']
+excerpt: 'গ্রাফ থিওরির বিভিন্ন অ্যালগরিদম সম্পর্কে বিস্তারিত। BFS, DFS থেকে শুরু করে শর্টেস্ট পাথ।'
+category: 'গ্রাফ থিওরি'
+---
+
+## ভূমিকা
+
+গ্রাফ হলো নোড (Node) এবং এজ (Edge) এর সমন্বয়ে গঠিত একটি ডেটা স্ট্রাকচার।
+
+## গ্রাফ ট্রাভার্সাল (Graph Traversal)
+
+### BFS (Breadth-First Search)
+BFS গ্রাফের প্রতিটি লেভেল অনুযায়ী ট্রাভার্স করে। এটি শর্টেস্ট পাথ বের করতে ব্যবহৃত হয় (Unweighted graph এর ক্ষেত্রে)। Time Complexity: $O(V + E)$
+
+### DFS (Depth-First Search)
+DFS গ্রাফের যতটা গভীরে যাওয়া যায় ততটা যায়। এটি সাইকেল ডিটেক্ট করতে বা টপোলজিক্যাল সর্টিং এ কাজে লাগে। Time Complexity: $O(V + E)$
+
+## শর্টেস্ট পাথ অ্যালগরিদম (Shortest Path Algorithms)
+
+### Dijkstra's Algorithm
+পজিটিভ ওয়েটেড গ্রাফে শর্টেস্ট পাথ বের করতে ব্যবহৃত হয়। Time Complexity: $O(E + V \log V)$
+
+### Bellman-Ford Algorithm
+নেগেটিভ ওয়েটেড গ্রাফেও শর্টেস্ট পাথ বের করতে পারে। Time Complexity: $O(V \times E)$
+
+### Floyd-Warshall Algorithm
+All-pairs shortest path বের করার জন্য। Time Complexity: $O(V^3)$
+
+## মিনিমাম স্প্যানিং ট্রি (Minimum Spanning Tree)
+
+### Kruskal's Algorithm
+এজ গুলোকে সর্ট করে MST তৈরি করে। 
+
+### Prim's Algorithm
+নোড থেকে শুরু করে সবচেয়ে কম ওয়েটের এজ নিয়ে MST তৈরি করে।

@@ -1,0 +1,51 @@
+---
+title: 'NumPy Basics'
+date: 'জুলাই ১৮, ২০২৬'
+tags: ['NumPy', 'Python', 'Data Science']
+excerpt: 'ডেটা সায়েন্সে সবচেয়ে জনপ্রিয় লাইব্রেরি NumPy এর বেসিক গাইড।'
+category: 'ডেটা স্ট্রাকচার'
+---
+
+## ভূমিকা
+
+NumPy হলো পাইথনের একটি লাইব্রেরি যা অ্যারে প্রসেসিং এবং ম্যাথমেটিকাল ক্যালকুলেশনের জন্য ব্যবহৃত হয়। এটি পাইথনের লিস্টের চেয়ে অনেক দ্রুত কাজ করে।
+
+## ইনস্টলেশন ও ইম্পোর্ট
+
+```bash
+pip install numpy
+```
+
+```python
+import numpy as np
+```
+
+## বেসিক অপারেশনস
+
+### ১. অ্যারে তৈরি (Creating Arrays)
+```python
+arr = np.array([1, 2, 3, 4, 5])
+print(arr)
+```
+
+### ২. ডাইমেনশন (Dimensions)
+```python
+# 2D Array
+arr2d = np.array([[1, 2, 3], [4, 5, 6]])
+print(arr2d.shape) # Output: (2, 3)
+```
+
+### ৩. জিরো এবং ওয়ানস (Zeros and Ones)
+```python
+zeros = np.zeros((3, 3))
+ones = np.ones((2, 2))
+```
+
+### ৪. ম্যাথমেটিকাল অপারেশনস (Math Operations)
+```python
+a = np.array([1, 2, 3])
+b = np.array([4, 5, 6])
+
+print(a + b) # Output: [5 7 9]
+print(a * b) # Output: [ 4 10 18]
+```

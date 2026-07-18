@@ -1,0 +1,83 @@
+---
+title: 'Python (Basic to Advanced)'
+date: 'জুলাই ১৮, ২০২৬'
+tags: ['Python', 'Basic', 'Advanced', 'Programming']
+excerpt: 'Python প্রোগ্রামিং ল্যাঙ্গুয়েজের বেসিক থেকে অ্যাডভান্সড টপিকগুলো এক জায়গায়।'
+category: 'ডেটা স্ট্রাকচার'
+---
+
+## Python Basics
+
+### ১. ভেরিয়েবল ও ডেটা টাইপ
+Python এ ডেটা টাইপ ডিক্লেয়ার করতে হয় না।
+```python
+x = 10        # Integer
+y = 3.14      # Float
+name = "Ali"  # String
+```
+
+### ২. কন্ডিশনাল স্টেটমেন্ট (if-else)
+```python
+if x > 5:
+    print("x is greater than 5")
+else:
+    print("x is 5 or less")
+```
+
+### ৩. লুপ (Loops)
+```python
+for i in range(5):
+    print(i)
+```
+
+## Python Intermediate
+
+### ৪. লিস্ট কমপ্রিহেনশন (List Comprehension)
+খুব সহজেই এক লাইনে লিস্ট তৈরি করা যায়।
+```python
+squares = [i**2 for i in range(10)]
+```
+
+### ৫. ফাংশন ও ল্যাম্বডা (Functions & Lambda)
+```python
+def add(a, b):
+    return a + b
+
+multiply = lambda x, y: x * y
+```
+
+## Python Advanced
+
+### ৬. জেনারেটর (Generators)
+মেমোরি বাঁচাতে জেনারেটর ব্যবহার করা হয়।
+```python
+def count_up_to(max):
+    count = 1
+    while count <= max:
+        yield count
+        count += 1
+```
+
+### ৭. ডেকোরেটর (Decorators)
+ফাংশনের আচরণ পরিবর্তন করার জন্য।
+```python
+def my_decorator(func):
+    def wrapper():
+        print("Something is happening before the function is called.")
+        func()
+        print("Something is happening after the function is called.")
+    return wrapper
+
+@my_decorator
+def say_whee():
+    print("Whee!")
+```
+
+### ৮. অবজেক্ট ওরিয়েন্টেড প্রোগ্রামিং (OOP)
+```python
+class Dog:
+    def __init__(self, name):
+        self.name = name
+    def bark(self):
+        print("Woof!")
+```
